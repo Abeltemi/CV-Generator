@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <form method="POST", action="">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="">Full Name</label>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="John">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="john@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input type="phone" name="phone" class="form-control" id="phone"  placeholder="+2222 4444">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Date of birth</label>
+                        <input type="date" name="dob" class="form-control" id="dob">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Summary</label>
+                        <textarea type="text" name="summary" class="form-control" id="summary"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Degree</label>
+                        <input type="text" name="degree" class="form-control" id="degree">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">School</label>
+                        <input type="text" name="school" class="form-control" id="school">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">University</label>
+                        <input type="text" name="university" class="form-control" id="uni">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Previous work</label>
+                        <textarea type="text" name="previous_work" class="form-control" id="previous_work"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Skills</label>
+                        <input type="text" class="form-control" id="skills" name="skills">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
