@@ -1,0 +1,24 @@
+{% extends 'pdf/base.html' %}
+
+<body>
+    {% block body %}
+    <div class="container" style="padding-top: 2%;">
+        <div class="row m-5">
+            <div class="col-md-12">
+                <h2>CV Database Profile</h2>
+                <div class="col-md-8">
+                    <ul class="list-group">
+                        {% for profilename in profiles %}
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                          {{profilename.name}}
+                          <a href="{% url 'resume' profilename.id }}" class=" btn btn-warning">Download CV</a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+</body>

@@ -23,7 +23,8 @@ from django.contrib.auth import views as authViews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.cvForm, name="cvform"),
-    path('<int:id>', views.resume, name="resume"),
+    path('viewresume/<int:id>', views.resume, name="resume"),
+    path('viewresume/', views.viewResumes, name='viewresumes'),
     path('register', user_view.register, name='register'),
     path('login/', authViews.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', authViews.LogoutView.as_view(template_name='users/logout.html'), name='logout'),

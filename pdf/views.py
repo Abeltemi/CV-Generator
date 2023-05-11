@@ -42,6 +42,8 @@ def cvForm(request):
         
     return render(request, 'pdf/cvform.html')
 
+
+@login_required
 def resume(request, id):
     
     user_profile = Profile.objects.get(pk=id)
@@ -68,3 +70,10 @@ def resume(request, id):
     # specify name of the file to be downloaded
     filename = "resume.pdf"
     return response
+
+
+@login_required
+def viewResumes(request):
+    profiles = Profile.objects.all()
+    
+    return render(request, 'pdf/viewresumes.html', {'profiles': profiles})

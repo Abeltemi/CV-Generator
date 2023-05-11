@@ -16,8 +16,8 @@
 
             <div class="navbar">
                 <a href="{% url 'cvform' %}" class="nav-item nav-link">Home</a>
-                <a href="#" class="nav-item nav-link">Download</a>
-                <a href="#" class="nav-item nav-link">View</a>
+                <a href="{% url 'viewresumes' %}" class="nav-item nav-link">Download</a>
+                <a href="{% url 'viewresumes' %}" class="nav-item nav-link">View</a>
                 {% if user.is_authenticated %}
                 <a href="{% url 'logout' %}" class="nav-item nav-link">Logout</a>
 
