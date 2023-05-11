@@ -1,0 +1,35 @@
+{% extends 'pdf/base.html' %}
+<body>
+    
+    {% block body %}
+    <div style="padding-top: 2%;" class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <div class="card">
+                    <div class="card-header text-white bg-info">
+                        <div class="card-title">Login</div>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            {% for field in form %}
+                                <div class="form-group row">
+                                    <div class="col-sm-10">
+                                        {{ field.name }}
+                                    </div>
+                                    <div class="col-sm-10">
+                                        {{ field }}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <button class=" card-link btn btn-primary" type="submit">Login</button>
+                            <a href="{% url 'register' %}" class="card-link btn btn-primary">Register</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}
+</body>

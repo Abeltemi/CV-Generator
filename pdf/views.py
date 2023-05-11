@@ -4,10 +4,12 @@ from .models import Profile
 from django.http import HttpResponse
 import pdfkit
 from django.template import loader
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
 
+@login_required
 def cvForm(request):
     
     if request.method == 'POST':
